@@ -26,8 +26,8 @@ public class CurrentAccount extends BankAccount{
                throw new Exception("Valid License can not be generated");
            }
 
-           String newid=regenerate(tradeLicenseId);
-           this.tradeLicenseId=newid;
+           this.tradeLicenseId=regenerate(tradeLicenseId);
+
        }
 
     }
@@ -45,9 +45,10 @@ public class CurrentAccount extends BankAccount{
         }
         char[] rarr=new char[s.length()];
         int index=0;
-        while(arr[maxchar-'A']-->0){
+        while(arr[maxchar-'A']>0){
             rarr[index]=maxchar;
             index+=2;
+            arr[maxchar-'A']--;
         }
 
         for(int i=0;i<26;i++){
